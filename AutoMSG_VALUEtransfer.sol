@@ -9,9 +9,9 @@ contract ContestRewardAutoMsgValuePayout {
                                0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB]; 
     //receive() auto executes when getting ether like fallback(). Don't need fallback() because we don't need proxy/upgrades.
     receive() external payable {  
-        if(address(this).balance >= 4 ether) { //Only execute if we have at least 4 ETHER
+        if(address(this).balance >= (teamAddresses.length)*(10**18)) { //Only execute if we have at least 4 ETHER
             for(uint i = 0; i < teamAddresses.length; i++) {
-                payable(teamAddresses[i]).transfer(1 ether);
+                payable(teamAddresses[i]).transfer(address(this).balance/((teamAddresses.length)-i)); //Even transfer.
             }
         }
     }
