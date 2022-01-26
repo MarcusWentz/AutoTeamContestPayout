@@ -1,4 +1,5 @@
-# AutoTeamContestPayout [MSG.VALUE and ERC777 examples]
+# AutoTeamContestPayout 
+# [MSG.VALUE and ERC777 examples]
 
 Show how to detect and automate Solidity commands with:
 
